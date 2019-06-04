@@ -1,0 +1,28 @@
+{
+  "name": "asciidoctor-build",
+  "version": "0.0.1",
+  "description": "Docker convenience wrapper for Asciidoctor.",
+  "author": "cdcabrera",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdcabrera/asciidoctor-build"
+  },
+  "bugs": {
+    "url": "https://github.com/cdcabrera/asciidoctor-build/issues"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "bin": {
+    "asciidoctor": "./bin/cli.sh"
+  },
+  "scripts": {
+    "asciidoctor": "docker run -it --rm -v \"$(pwd)/data:/data\" -v \"$(pwd)/dist:/output\" --name asciidoctor asciidoctor",
+    "asciidoctor:build": "docker build -t asciidoctor .",
+    "asciidoctor:hello-world": "yarn asciidoctor -t"
+  },
+  "standard-version": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
